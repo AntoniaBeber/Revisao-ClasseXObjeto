@@ -1,0 +1,53 @@
+import java.time.LocalDate;
+
+public class Pessoa {
+
+    //Atributos
+    private String name;
+    private LocalDate dataNascimento;
+    private String altura;
+
+
+    public Pessoa(String name, LocalDate dataNascimento, String altura){
+        this.name = name;
+        this.dataNascimento = dataNascimento;
+        this.altura = altura;
+    }
+
+    public String getName(){
+        return name;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public LocalDate getDataNascimento(){
+        return dataNascimento;
+    }
+    public void setDataNascimento(LocalDate dataNascimento){
+        this.dataNascimento = dataNascimento;
+    }
+    public String getAltura(){
+        return altura;
+    }
+    public void setAltura(double altura){
+        this.getAltura();
+    }
+
+
+    public int calculo(){
+        int anoAtual = LocalDate.now().getYear();
+        int anoNascimento = dataNascimento.getYear();
+        return  anoAtual - anoNascimento;
+    }
+
+
+    public static void main(String[] args) {
+        LocalDate dataDeNascimento = LocalDate.of(1996, 03,10);
+        Pessoa pessoa = new Pessoa("Gabriel", dataDeNascimento, "171");
+        System.out.println("Nome: " + pessoa.name);
+        System.out.println("Data de Nascimento: " + pessoa.dataNascimento);
+        System.out.println("Altura: " + pessoa.altura);
+    }
+
+}
